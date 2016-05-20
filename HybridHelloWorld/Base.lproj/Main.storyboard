@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Hello World-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Hello World" id="BYZ-38-t0r" customClass="ViewController" customModule="HybridHelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA5-tY-Ewh">
+                                <rect key="frame" x="0.0" y="120" width="600" height="360"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlw-tn-J1A">
+                                <rect key="frame" x="254" y="522" width="93" height="30"/>
+                                <state key="normal" title="Native button"/>
+                                <connections>
+                                    <action selector="reloadWebPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="beU-Cl-ZCw"/>
+                                    <segue destination="cnr-E3-5rk" kind="presentation" id="THY-tb-yl3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="native text field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-eD-Z9V">
+                                <rect key="frame" x="240" y="82" width="120" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="textfield"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dlw-tn-J1A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bb8-d8-l6u"/>
+                            <constraint firstItem="oA5-tY-Ewh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ciy-8c-SUk"/>
+                            <constraint firstItem="oA5-tY-Ewh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Fhx-Ih-Fgu"/>
+                            <constraint firstItem="Dlw-tn-J1A" firstAttribute="top" secondItem="oA5-tY-Ewh" secondAttribute="bottom" constant="42" id="WDd-OX-IF9"/>
+                            <constraint firstItem="oA5-tY-Ewh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cRM-tP-Lnk"/>
+                            <constraint firstItem="bGI-eD-Z9V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kzX-Zh-jou"/>
+                            <constraint firstItem="oA5-tY-Ewh" firstAttribute="top" secondItem="bGI-eD-Z9V" secondAttribute="bottom" constant="8" id="tbB-gU-waf"/>
+                            <constraint firstItem="oA5-tY-Ewh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="vyp-r0-6vv"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="myWebView" destination="oA5-tY-Ewh" id="bTE-O8-OgN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Native View Controller-->
+        <scene sceneID="vNE-2C-dPF">
+            <objects>
+                <viewController id="cnr-E3-5rk" customClass="NativeViewController" customModule="HybridHelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="duC-UU-vtT"/>
+                        <viewControllerLayoutGuide type="bottom" id="vGU-2w-ZGi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HMo-K7-4Lf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native view controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLF-uz-aqg">
+                                <rect key="frame" x="217" y="289" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61Z-nd-Rcx">
+                                <rect key="frame" x="273" y="318.5" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="cnr-E3-5rk" eventType="touchUpInside" id="nxt-Du-49W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="61Z-nd-Rcx" firstAttribute="centerX" secondItem="HMo-K7-4Lf" secondAttribute="centerX" id="qX6-Zi-WgP"/>
+                            <constraint firstItem="61Z-nd-Rcx" firstAttribute="top" secondItem="BLF-uz-aqg" secondAttribute="bottom" constant="8" id="u6I-p2-dBB"/>
+                            <constraint firstItem="BLF-uz-aqg" firstAttribute="centerY" secondItem="HMo-K7-4Lf" secondAttribute="centerY" id="uaY-zk-m3q"/>
+                            <constraint firstItem="BLF-uz-aqg" firstAttribute="centerX" secondItem="HMo-K7-4Lf" secondAttribute="centerX" id="xtr-8k-ZhH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQc-jc-afb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="399"/>
+        </scene>
+    </scenes>
+</document>
